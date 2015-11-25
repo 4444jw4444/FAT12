@@ -33,12 +33,23 @@ int main(int argc, char* argv[]){
     OSLine[8] = '\0';
     //display the Operating system
     printf("OS Name: %s\n", OSLine);
+
+    //seek to the label
+    fseek(fo,40, SEEK_CUR);
+    //create label holder
+    char fileLabel[11];
+    //read in a chunk of data
+    fread(fileLabel,11,1,fo);
+    //add the string terminator
+    fileLabel[10] = '\0';
+    //display the Disk Label
+    printf("Label of the disk: %s\n", fileLabel);
+
     //close the file stream
     fclose(fo);
     //exit successfully
     printf("Success:Exiting\n");
     return 0;
-
 }
 //fread
 //fseek
