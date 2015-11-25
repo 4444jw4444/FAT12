@@ -1,0 +1,30 @@
+////--------------README - FAT (File Allocation Table) Project--------------////
+This folder contains 4 different programs that can provide different information 
+and different functions to the user. Each program can be run independently using
+the following commands, and will perform the action specified in the description.
+
+///---Part 1 (Disk Information)---///
+In this program we read the meta data from a disk and present it to the user.
+The command to run this program is as follows. 
+./diskinfo disk2.IMA
+
+
+///---Part 2 (Disk Listing)---///
+In this program we display the contents of some of the folders in the disk image.
+The command to run this program is as follows.
+./disklist disk2.IMA
+
+
+///---Part 3 (Disk Read, Linux Write)---///
+In this program we copy a file from the disk image to the local linux directory.
+The command to run this program is as follows.
+./diskget disk2.IMA
+
+
+///---Part 4 (Linux Read, Disk Write)---///
+In this program we copy a file from the local linux directory to the disk image.
+The command to run this program is as follows.
+./diskput disk2.IMA
+
+If you would like to run these programs with different FAT disk images, you can
+replace "disk2.IMA" with your preferred FAT disk image file name. Thank you !!!
