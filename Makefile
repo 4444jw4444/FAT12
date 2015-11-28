@@ -2,7 +2,7 @@
 all: diskinfo disklist diskput diskget
 
 diskinfo: diskinfo.c
-	gcc diskinfo.c -lreadline -lhistory -ltermcap -o diskinfo
+	gcc diskinfo.c -g -O0 -lreadline -lhistory -ltermcap -o diskinfo
 
 disklist: disklist.c
 	gcc disklist.c -lreadline -lhistory -ltermcap -o disklist
