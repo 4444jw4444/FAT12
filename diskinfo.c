@@ -94,6 +94,17 @@ int main(int argc, char* argv[]){
 	//printf("labelMask and readByte: %x, subMask and readByte: %x", (labelMask & readByte), (subMask & readByte));
 	i++;
     }
+    
+    //get the number of FAT tables
+    int numOfFAT = 0;
+    fseek(fo,16,SEEK_SET);
+    fread(&numOfFAT,1,1,fo);
+
+    //get the sectors per FAT table
+    int secPerFAT = 0;
+    fseek(fo,22,SEEK_SET);
+    fread(&secPerFAT,2,1,fo);
+
     //fseek to the first location of the root directory
     //19 * 512 gives us the first entry in the root directory
     /*fseek(fo,19*512,SEEK_SET);
@@ -137,7 +148,8 @@ int main(int argc, char* argv[]){
     printf("Label of the disk: %s\n", fileLabel);
     printf("Total size of the disk: %d bytes\n", 2879*512);
     printf("The number of files in the root directory (not including subdirectories): %d\n", count);
- 
+    printf("Number of FAT copies: %d\n", numOfFAT);
+    printf("Sectors per FAT table: %d\n", secPerFAT); 
     //close the file stream
     fclose(fo);
     //exit successfully
